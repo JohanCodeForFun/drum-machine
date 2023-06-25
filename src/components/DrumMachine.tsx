@@ -7,10 +7,10 @@ type drums = {
 };
 
 export const DrumMachine = () => {
-  // function handleClick(input: string) {
-  //   // new Audio(input).play();
-  //   console.log(input)
-  //   return
+  // function handleClick(key, song) {
+  //   return () => {
+  //     document.getElementById(key)?.play()
+  //   }
   // }
 
   return (
@@ -19,9 +19,8 @@ export const DrumMachine = () => {
         {drums.map((drum: drums) => {
           return (
             <div className="drum-pad" id={drum.song} key={drum.key}
-            // onClick={() => console.log(drum.sound)}>
-              onClick={() => new Audio(drum.url)}>
-              <audio className="clip" id={drum.key} src={drum.url} controls></audio>{drum.key}
+              onClick={() => document.getElementById(drum.key)?.play()}>
+              <audio className="clip" id={drum.key} src={drum.url}></audio>{drum.key}
           </div>
           );
         })}
