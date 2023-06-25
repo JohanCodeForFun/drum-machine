@@ -8,9 +8,6 @@ function App() {
       <h1>Drum Machine</h1>
       <div id="drum-machine">
       <DrumMachine />
-        <div id="display">
-          <p>display sound...</p>
-        </div>
       </div>
     </>
   );
