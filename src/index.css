@@ -26,21 +26,19 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
 #drum-machine {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr; */
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .pad-bank {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   border: 1px solid red;
 }
 .drum-pad {
@@ -81,5 +79,14 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  #drum-machine {
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
 }
