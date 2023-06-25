@@ -8,7 +8,7 @@ type drums = {
 };
 
 export const DrumMachine = () => {
-  const [drumPlayed, setDrumPlayed] = useState("Drum played...");
+  const [drumPlayed, setDrumPlayed] = useState("...");
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyPressed, true);
@@ -49,7 +49,7 @@ export const DrumMachine = () => {
         })}
       </div>
       <div id="display">
-        <p>{drumPlayed}</p>
+        <p>Drum played: {drumPlayed}</p>
       </div>
     </>
   );
