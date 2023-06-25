@@ -1,29 +1,25 @@
-const buttons = [
-  {
-    name: "drum1",
-    sound: null
-  },
-  {
-    name: "drum2",
-    sound: null
-  },
-  {
-    name: "hi-hat",
-    sound: null
-  },
-  {
-    name: "snare",
-    sound: null
-  },
-]
+import {drums} from "../assets/drumsData.js"
+
+type drums = {
+  name: string,
+  sound: string
+}
 
 export const DrumMachine = () => {
+
+  function handleClick(input: string) {
+    new Audio(input).play()
+  }
+
+// const drumButtons = drums.map(drum => <button onClick={handleClick(drum.sound)} key={drum.name}>{drum.name}</button>)
+ 
   return (
     <>
-    <h1>Druuummms!</h1>
-    <div>
-      {buttons.map(btn => <button>{btn.name}</button>)}
-    </div>
+      <h1>Druuummms!</h1>
+      <div>
+        {/* {drumButtons} */}
+        {/* {drums.map(btn => <button>{btn.name}</button>)} */}
+      </div>
     </>
   )
 }
