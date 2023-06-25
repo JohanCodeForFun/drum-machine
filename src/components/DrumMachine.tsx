@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { drums } from "../assets/drumsData.js";
 
 type drums = {
@@ -8,11 +8,7 @@ type drums = {
 };
 
 export const DrumMachine = () => {
-  // function handleClick(key, song) {
-  //   return () => {
-  //     document.getElementById(key)?.play()
-  //   }
-  // }
+  const [drumPlayed, setDrumPlayed] = useState("Drum played...");
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyPressed, true);
@@ -24,6 +20,7 @@ export const DrumMachine = () => {
         return;
       } else if (element.key === e.key.toUpperCase()) {
         const button = document.getElementById(element.key);
+        setDrumPlayed(element.key);
         button?.click();
         button?.focus();
       }
@@ -39,7 +36,10 @@ export const DrumMachine = () => {
               className="drum-pad"
               id={drum.song}
               key={drum.key}
-              onClick={() => document.getElementById(drum.key)?.play()}
+              onClick={() => {
+                document.getElementById(drum.key)?.play();
+                setDrumPlayed(drum.key);
+              }}
               onKeyDown={detectKeyPressed}
             >
               <audio className="clip" id={drum.key} src={drum.url}></audio>
@@ -47,6 +47,9 @@ export const DrumMachine = () => {
             </div>
           );
         })}
+      </div>
+      <div id="display">
+        <p>{drumPlayed}</p>
       </div>
     </>
   );
