@@ -31,6 +31,12 @@ body {
   min-height: 100vh;
 }
 
+#drum-machine {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+}
+
 .pad-bank {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
