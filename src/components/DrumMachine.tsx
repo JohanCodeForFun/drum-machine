@@ -43,7 +43,7 @@ export const DrumMachine = () => {
               onKeyDown={detectKeyPressed}
             >
               <audio className="clip" id={drum.key} src={drum.url}></audio>
-              {drum.key}
+              <p className="key-btn">{drum.key}</p>
             </div>
           );
         })}
