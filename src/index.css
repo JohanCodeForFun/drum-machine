@@ -3,9 +3,17 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* https://coolors.co/palette/ff595e-ffca3a-8ac926-1982c4-6a4c93 */
+  --orange: #FF595E;
+  --yellow: #FFCA3A;
+  --green: #8AC926;
+  --blue: #1982C4;
+  --purple: #6A4C93;
+
+
+  /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,17 +40,62 @@ body {
 
 #drum-machine {
   display: grid;
+  padding: .3rem;
   grid-template-columns: repeat(2, 1fr);
+  border: 1px solid #e5e5e5;
+  background-color: #14213d;
+  border-radius: .3rem;
+  color: #e5e5e5;
 }
 
 .pad-bank {
+  padding: .3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  border: 1px solid red;
 }
 .drum-pad {
-  border: 1px solid red;
+  background: rgb(255,89,94);
+  box-shadow: rgb(76, 16, 16) 0px 5px 0 0;
+  background: -moz-radial-gradient(circle, rgba(255,89,94,1) 20%, rgb(77, 25, 27) 85%);
+  background: -webkit-radial-gradient(circle, rgba(255,89,94,1) 20%, rgba(77, 25, 27) 85%);
+  background: radial-gradient(circle, rgba(255,89,94,1) 20%, rgba(77, 25, 27) 85%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff595e",endColorstr="#020024",GradientType=1);
+  border-radius: .5rem;
+  padding: 1rem;
+  margin: .3rem;
+  border: 2px solid rgba(30, 8, 8, 0.5);
+  transition: width .8s, height .8s, background-color .8s, rotate .8s;
+}
+.drum-pad:hover {
+  background-color: #ffcccc;
+  transform: scale(0.9);
+  /* width: 50px;
+  height: 50px; */
+  /* rotate: 90deg; */
+}
+
+.drum-pad:hover,
+.drum-pad:focus {
+  transform: translate(0, 4px);
+  box-shadow: rgb(76, 16, 16) 0px 1px 0 0;
+  /* box-shadow: rgba(255, 255, 255) 0px 4px 0 0;
+  -webkit-box-shadow: rgba(255, 255, 255) 0px 4px 0 0;
+  -moz-box-shadow: rgba(255, 255, 255) 0px 4px 0 0; */
+}
+
+.drum-pad:active {
+  transform: translate(0px, 2px);
+  box-shadow: var(--purple) 0px 0px 0 0;
+  -webkit-box-shadow: var(--purple) 0px 0px 0 0;
+  -moz-box-shadow: var(--purple) 0px 0px 0 0;
+}
+
+.key-btn {
+  margin: 0;
+  color: black;
+  font-weight: 700;
+  border-radius: .3rem;
 }
 
 h1 {
@@ -69,7 +122,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -80,7 +133,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 
 @media screen and (max-width: 375px) {
