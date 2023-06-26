@@ -1,5 +1,7 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* font-family: "Times New Roman", Times, serif; */
+  font-family: 'Rough', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -64,20 +66,14 @@ body {
   border-radius: .5rem;
   padding: 1rem;
   margin: .3rem;
-  border: 2px solid rgba(30, 8, 8, 0.5);
+  border: 2px solid rgba(30, 8, 8, 0.8);
   transition: width .8s, height .8s, background-color .8s, rotate .8s;
-}
-.drum-pad:hover {
-  background-color: #ffcccc;
-  transform: scale(0.9);
-  /* width: 50px;
-  height: 50px; */
-  /* rotate: 90deg; */
 }
 
 .drum-pad:hover,
 .drum-pad:focus {
-  transform: translate(0, 4px);
+  background-color: #ffcccc;
+  transform: translate(0, 4px) scale(0.97);
   box-shadow: rgb(76, 16, 16) 0px 1px 0 0;
   /* box-shadow: rgba(255, 255, 255) 0px 4px 0 0;
   -webkit-box-shadow: rgba(255, 255, 255) 0px 4px 0 0;
