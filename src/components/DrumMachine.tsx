@@ -9,6 +9,9 @@ type drums = {
 
 export const DrumMachine = () => {
   const [drumPlayed, setDrumPlayed] = useState("...");
+  const [record, setRecord] = useState(false);
+  const [recordBeat, setRecordBeat] = useState("");
+  const [play, setPlay] = useState(false)
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyPressed, true);
@@ -26,6 +29,15 @@ export const DrumMachine = () => {
       }
     });
   };
+
+  function handleRecordClick() {
+    setRecord(!record)
+    console.log(record)
+  }
+  function handlePlayClick() {
+    setPlay(!play)
+    console.log(play)
+  }
 
   return (
     <>
@@ -50,8 +62,14 @@ export const DrumMachine = () => {
       </div>
       <div id="display">
         <p>ON // OFF</p>
-        <p>volume knob</p>
-        <p>RECORD // PLAY && STOP</p>
+        <p>volume, tempo, pitch knob</p>
+        <p>
+          <span onClick={handleRecordClick}>[ REC ]</span>
+          <span onClick={handlePlayClick}>[ PLAY ]</span>
+          {record ? '' : '[ RECORDING... ]'} 
+          {play ? 'PLAYING...' : '[ STOP! ]'}
+        </p>
+        <p>[ Recorded beats... ]</p>
         <p>Drum played: {drumPlayed}</p>
       </div>
     </>
