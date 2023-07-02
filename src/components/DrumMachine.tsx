@@ -49,6 +49,9 @@ export const DrumMachine = () => {
         })}
       </div>
       <div id="display">
+        <p>ON // OFF</p>
+        <p>volume knob</p>
+        <p>RECORD // PLAY && STOP</p>
         <p>Drum played: {drumPlayed}</p>
       </div>
     </>
