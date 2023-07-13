@@ -44,7 +44,7 @@ export const DrumMachine = () => {
       <div className="pad-bank">
         {drums.map((drum: drums) => {
           return (
-            <div
+            <button
               className="drum-pad"
               id={drum.song}
               key={drum.key}
@@ -56,7 +56,7 @@ export const DrumMachine = () => {
             >
               <audio className="clip" id={drum.key} src={drum.url}></audio>
               <p className="key-btn">{drum.key}</p>
-            </div>
+            </button>
           );
         })}
       </div>
