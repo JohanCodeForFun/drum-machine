@@ -112,6 +112,7 @@ body {
   color: var(--yellow);
   background: var(--orange);
   text-shadow: none;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
 }
 
 .drum-pad::after {
