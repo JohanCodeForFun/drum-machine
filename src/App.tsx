@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <h1>Drum Machine</h1>
+      <h1 className="title">Drum Machine</h1>
       <div id="drum-machine">
       <DrumMachine />
       </div>
