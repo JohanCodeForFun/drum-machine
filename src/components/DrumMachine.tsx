@@ -64,8 +64,8 @@ export const DrumMachine = () => {
         <p>ON // OFF</p>
         <p>volume, tempo, pitch knob</p>
         <p>
-          <button className="key-btn control-btn" onClick={handleRecordClick}>{record ? 'RECORDING...' : 'REC'} </button>
-          <button className="key-btn control-btn" onClick={handlePlayClick}>{play ? 'PLAYING...' : 'PLAY'}</button>
+          <button className="drum-pad rec-btn" onClick={handleRecordClick}>{record ? 'RECORDING...' : 'REC'} </button>
+          <button className="drum-pad play-btn" onClick={handlePlayClick}>{play ? 'PLAYING...' : 'PLAY'}</button>
            
           
         </p>
