@@ -6,6 +6,7 @@
   font-weight: 400;
 
   /* https://coolors.co/palette/ff595e-ffca3a-8ac926-1982c4-6a4c93 */
+  --white: #e5e5e5;
   --orange: #FF595E;
   --yellow: #FFCA3A;
   --green: #8AC926;
@@ -30,30 +31,44 @@
   box-sizing: border-box;
 }
 
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-} */
-
 body {
+  background-color: black;
+  color: var(--yellow);
   margin: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
 }
 
+.title {
+  color: var(--yellow);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
+
+  position: relative;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  background-color: var(--yellow);
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+}
+
 #drum-machine {
   display: grid;
   padding: .3rem;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #e5e5e5;
-  background-color: #14213d;
+  border: 1px solid var(--yellow);
+  /* background-color: var(--yellow); */
   border-radius: .3rem;
-  color: #e5e5e5;
+  color: var(--white);
+  box-shadow: 0 0 0.5em 0 var(--yellow);
 }
 
 .pad-bank {
