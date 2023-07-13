@@ -24,6 +24,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -57,34 +63,43 @@ body {
   grid-template-rows: repeat(3, 1fr);
 }
 .drum-pad {
-  background: rgb(255,89,94);
-  box-shadow: rgb(76, 16, 16) 0px 5px 0 0;
+  font-size: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--orange);
+  border: var(--orange) 0.125em solid;
+
+  padding: 1rem;
+  margin: .3rem;
+  border-radius: .5rem;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3) 0 0 0.45em;
+
+  box-shadow: inset 0 0 0.5em 0 var(--orange),
+  0 0 0.5em 0 var(--orange);
+
+  /* box-shadow: rgb(76, 16, 16) 0px 5px 0 0;
   background: -moz-radial-gradient(circle, rgba(255,89,94,1) 20%, rgb(77, 25, 27) 85%);
   background: -webkit-radial-gradient(circle, rgba(255,89,94,1) 20%, rgba(77, 25, 27) 85%);
   background: radial-gradient(circle, rgba(255,89,94,1) 20%, rgba(77, 25, 27) 85%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff595e",endColorstr="#020024",GradientType=1);
-  border-radius: .5rem;
-  padding: 1rem;
-  margin: .3rem;
   border: 2px solid rgba(30, 8, 8, 0.8);
-  transition: width .8s, height .8s, background-color .8s, rotate .8s;
+  transition: width .8s, height .8s, background-color .8s, rotate .8s; */
 }
 
 .drum-pad:hover,
 .drum-pad:focus {
-  background-color: #ffcccc;
+  /* background-color: #ffcccc;
   transform: translate(0, 4px) scale(0.97);
-  box-shadow: rgb(76, 16, 16) 0px 1px 0 0;
-  /* box-shadow: rgba(255, 255, 255) 0px 4px 0 0;
-  -webkit-box-shadow: rgba(255, 255, 255) 0px 4px 0 0;
-  -moz-box-shadow: rgba(255, 255, 255) 0px 4px 0 0; */
+  box-shadow: rgb(76, 16, 16) 0px 1px 0 0; */
 }
 
 .drum-pad:active {
-  transform: translate(0px, 2px);
+  /* transform: translate(0px, 2px);
   box-shadow: var(--purple) 0px 0px 0 0;
   -webkit-box-shadow: var(--purple) 0px 0px 0 0;
-  -moz-box-shadow: var(--purple) 0px 0px 0 0;
+  -moz-box-shadow: var(--purple) 0px 0px 0 0; */
 }
 
 .key-btn {
