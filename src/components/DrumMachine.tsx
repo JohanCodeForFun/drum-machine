@@ -19,7 +19,7 @@ export const DrumMachine = () => {
       if (element.key !== e.key.toUpperCase()) {
         return;
       } else if (element.key === e.key.toUpperCase()) {
-        const button = document.getElementById(element.key);
+        const button = document.getElementById(element.key) as HTMLAudioElement;
         setDrumPlayed(element.key);
         button?.click();
         button?.focus();
@@ -37,7 +37,7 @@ export const DrumMachine = () => {
               id={drum.song}
               key={drum.key}
               onClick={() => {
-                document.getElementById(drum.key)?.play();
+                (document.getElementById(drum.key) as HTMLAudioElement)?.play();
                 setDrumPlayed(drum.key);
               }}
               onKeyDown={detectKeyPressed}
