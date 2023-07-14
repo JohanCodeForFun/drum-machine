@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { drums } from "../assets/drumsData.js";
+import { drums } from "../assets/drumsData.ts";
 
 type drums = {
   key: string;
