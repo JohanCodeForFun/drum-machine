@@ -11,10 +11,10 @@ export const DrumMachine = () => {
   const [drumPlayed, setDrumPlayed] = useState("...");
 
   useEffect(() => {
-    document.addEventListener("keydown", detectKeyPressed, true);
+    document.addEventListener("keydown", handleKeyPressed, true);
   }, []);
 
-  const detectKeyPressed = (e: KeyboardEvent) => {
+  const handleKeyPressed = (e: KeyboardEvent) => {
     drums.find((element: drums) => {
       if (element.key !== e.key.toUpperCase()) {
         return;
@@ -40,7 +40,7 @@ export const DrumMachine = () => {
                 (document.getElementById(drum.key) as HTMLAudioElement)?.play();
                 setDrumPlayed(drum.key);
               }}
-              onKeyDown={detectKeyPressed}
+              onKeyDown={handleKeyPressed}
             >
               <audio className="clip" id={drum.key} src={drum.url} />
               {drum.key}
