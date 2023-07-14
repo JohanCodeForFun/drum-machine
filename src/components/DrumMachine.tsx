@@ -7,6 +7,10 @@ type drums = {
   url: string;
 };
 
+interface KeyboardEvent {
+  key: string;
+}
+
 export const DrumMachine = () => {
   const [drumPlayed, setDrumPlayed] = useState("...");
 
