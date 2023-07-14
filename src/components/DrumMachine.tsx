@@ -9,15 +9,12 @@ type drums = {
 
 export const DrumMachine = () => {
   const [drumPlayed, setDrumPlayed] = useState("...");
-  const [record, setRecord] = useState(false);
-  const [recordBeat, setRecordBeat] = useState("");
-  const [play, setPlay] = useState(false)
 
   useEffect(() => {
     document.addEventListener("keydown", detectKeyPressed, true);
   }, []);
 
-  const detectKeyPressed = (e: KeyboardEvent<HTMLDivElement>) => {
+  const detectKeyPressed = (e: KeyboardEvent) => {
     drums.find((element: drums) => {
       if (element.key !== e.key.toUpperCase()) {
         return;
@@ -29,15 +26,6 @@ export const DrumMachine = () => {
       }
     });
   };
-
-  function handleRecordClick() {
-    setRecord(!record)
-    console.log(record)
-  }
-  function handlePlayClick() {
-    setPlay(!play)
-    console.log(play)
-  }
 
   return (
     <>
@@ -54,22 +42,13 @@ export const DrumMachine = () => {
               }}
               onKeyDown={detectKeyPressed}
             >
-              <audio className="clip" id={drum.key} src={drum.url}></audio>
-              <p className="key-btn">{drum.key}</p>
+              <audio className="clip" id={drum.key} src={drum.url} />
+              {drum.key}
             </button>
           );
         })}
       </div>
       <div id="display">
-        <p>ON // OFF</p>
-        <p>volume, tempo, pitch knob</p>
-        <p>
-          <button className="drum-pad rec-btn" onClick={handleRecordClick}>{record ? 'RECORDING...' : 'REC'} </button>
-          <button className="drum-pad play-btn" onClick={handlePlayClick}>{play ? 'PLAYING...' : 'PLAY'}</button>
-           
-          
-        </p>
-        <p>[ Recorded beats... ]</p>
         <p>Drum played: {drumPlayed}</p>
       </div>
     </>
