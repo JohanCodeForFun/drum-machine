@@ -1,18 +1,18 @@
+// colors
+/* https://coolors.co/palette/ff595e-ffca3a-8ac926-1982c4-6a4c93 */
+
+$white: #e5e5e5;
+$black: black;
+$orange: #FF595E;
+$yellow: #FFCA3A;
+$green: #8AC926;
+$blue: #1982C4;
+$purple: #6A4C93;
+
 :root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-  /* font-family: "Times New Roman", Times, serif; */
   font-family: 'Rough', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* https://coolors.co/palette/ff595e-ffca3a-8ac926-1982c4-6a4c93 */
-  --white: #e5e5e5;
-  --orange: #FF595E;
-  --yellow: #FFCA3A;
-  --green: #8AC926;
-  --blue: #1982C4;
-  --purple: #6A4C93;
-
 
   /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -32,8 +32,8 @@
 }
 
 body {
-  background-color: black;
-  color: var(--yellow);
+  background-color: $black;
+  color: $yellow;
   margin: 0;
   display: flex;
   min-width: 320px;
@@ -41,7 +41,7 @@ body {
 }
 
 .title {
-  color: var(--yellow);
+  color: $yellow;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
 
   position: relative;
@@ -50,7 +50,7 @@ body {
 .title::before {
   content: '';
   position: absolute;
-  background-color: var(--yellow);
+  background-color: $yellow;
   top: 50%;
   left: 0;
   width: 100%;
@@ -64,11 +64,10 @@ body {
   display: grid;
   padding: .3rem;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid var(--yellow);
-  /* background-color: var(--yellow); */
+  border: 1px solid $yellow;
   border-radius: .3rem;
-  color: var(--white);
-  box-shadow: 0 0 0.5em 0 var(--yellow);
+  color: $white;
+  box-shadow: 0 0 0.5em 0 $yellow;
 }
 
 .pad-bank {
@@ -82,8 +81,8 @@ body {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  color: var(--orange);
-  border: var(--orange) 0.125em solid;
+  color: $orange;
+  border: $orange 0.125em solid;
 
   padding: 0.25em 1em;
   margin: .3em;
@@ -91,8 +90,8 @@ body {
 
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
 
-  box-shadow: inset 0 0 0.5em 0 var(--orange),
-  0 0 0.5em 0 var(--orange);
+  box-shadow: inset 0 0 0.5em 0 $orange,
+  0 0 0.5em 0 $orange;
 
   position: relative;
 
@@ -109,15 +108,15 @@ body {
 
 .drum-pad:hover,
 .drum-pad:focus {
-  color: var(--yellow);
-  background: var(--orange);
+  color: $yellow;
+  background: $orange;
   text-shadow: none;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
 }
 
 .drum-pad::after {
   content: '';
-  background-color: var(--orange);
+  background-color: $orange;
   z-index: -1;
   transition: opacity 100ms linear;
 }
@@ -125,56 +124,11 @@ body {
 .drum-pad:hover::before,
 .drum-pad:focus::before {
   opacity: 1;
-  /* background-color: #ffcccc;
-  transform: translate(0, 4px) scale(0.97);
-  box-shadow: rgb(76, 16, 16) 0px 1px 0 0; */
 }
 
 .drum-pad:hover::after,
 .drum-pad:focus::after {
   opacity: 1;
-  /* transform: translate(0px, 2px);
-  box-shadow: var(--purple) 0px 0px 0 0;
-  -webkit-box-shadow: var(--purple) 0px 0px 0 0;
-  -moz-box-shadow: var(--purple) 0px 0px 0 0; */
-}
-
-.rec-btn {
-  color: var(--yellow);
-  margin: .3rem;
-}
-
-.rec-btn:hover,
-.rec-btn:focus {
-  color: var(--purple);
-  background: var(--yellow);
-  text-shadow: none;
-}
-
-.rec-btn::after {
-  content: '';
-  background-color: var(--orange);
-  z-index: -1;
-  transition: opacity 100ms linear;
-}
-
-.play-btn {
-  color: var(--green);
-  margin: .3rem;
-}
-
-.play-btn:hover,
-.play-btn:focus {
-  color: var(--blue);
-  background: var(--green);
-  text-shadow: none;
-}
-
-.play-btn::after {
-  content: '';
-  background-color: var(--blue);
-  z-index: -1;
-  transition: opacity 100ms linear;
 }
 
 h1 {
@@ -200,20 +154,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
 
 @media screen and (max-width: 375px) {
   #drum-machine {
