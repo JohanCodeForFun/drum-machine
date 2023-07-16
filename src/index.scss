@@ -1,22 +1,33 @@
 // colors
 /* https://coolors.co/palette/ff595e-ffca3a-8ac926-1982c4-6a4c93 */
 
-$white: #e5e5e5;
-$black: black;
-$orange: #FF595E;
-$yellow: #FFCA3A;
-$green: #8AC926;
-$blue: #1982C4;
-$purple: #6A4C93;
+$white: hsl(0, 0%, 90%);
+$black: hwb(0 0% 100%);
+$orange: hsl(358, 100%, 67%);
+$yellow: hsl(44, 100%, 61%);
+$green: hsl(83, 68%, 47%);
+$blue: hsl(203, 77%, 43%);
+$purple: hsl(265, 32%, 44%);
+
+// typography
+$font-stack: ('Rough', sans-serif);
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+// layout
+$breakpoints: (
+  'small': 375px,
+  'medium': 992px,
+  'large': 1200px
+);
 
 :root {
-  font-family: 'Rough', sans-serif;
+  // hur lägger jag till det här globalt?
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -45,19 +56,19 @@ body {
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
 
   position: relative;
-}
 
-.title::before {
-  content: '';
-  position: absolute;
-  background-color: $yellow;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
-  filter: blur(1em);
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: $yellow;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+  }
 }
 
 #drum-machine {
@@ -87,53 +98,26 @@ body {
   padding: 0.25em 1em;
   margin: .3em;
   border-radius: .5em;
-
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
-
   box-shadow: inset 0 0 0.5em 0 $orange,
   0 0 0.5em 0 $orange;
-
   position: relative;
-
   transition: background-color 100ms linear;
 
-  /* box-shadow: rgb(76, 16, 16) 0px 5px 0 0;
-  background: -moz-radial-gradient(circle, rgba(255,89,94,1) 20%, rgb(77, 25, 27) 85%);
-  background: -webkit-radial-gradient(circle, rgba(255,89,94,1) 20%, rgba(77, 25, 27) 85%);
-  background: radial-gradient(circle, rgba(255,89,94,1) 20%, rgba(77, 25, 27) 85%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff595e",endColorstr="#020024",GradientType=1);
-  border: 2px solid rgba(30, 8, 8, 0.8); */
-  /* transition: width .8s, height .8s, background-color .8s, rotate .8s;  */
-}
+  &:hover,
+  &:focus {
+    color: $yellow;
+    background: $orange;
+    text-shadow: none;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
+  }
 
-.drum-pad:hover,
-.drum-pad:focus {
-  color: $yellow;
-  background: $orange;
-  text-shadow: none;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
-}
-
-.drum-pad::after {
-  content: '';
-  background-color: $orange;
-  z-index: -1;
-  transition: opacity 100ms linear;
-}
-
-.drum-pad:hover::before,
-.drum-pad:focus::before {
-  opacity: 1;
-}
-
-.drum-pad:hover::after,
-.drum-pad:focus::after {
-  opacity: 1;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  &::after {
+    content: '';
+    background-color: $orange;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
 }
 
 button {
@@ -146,13 +130,14 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+  &:hover {
+    border-color: $orange;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 }
 
 @media screen and (max-width: 375px) {
