@@ -1,0 +1,16 @@
+$font-stack: ('Rough', sans-serif);
+
+body {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}

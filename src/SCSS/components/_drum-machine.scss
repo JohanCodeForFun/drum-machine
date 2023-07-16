@@ -1,0 +1,70 @@
+@use '../abstracts/colors' as *;
+
+#drum-machine {
+  display: grid;
+  padding: .3rem;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid $yellow;
+  border-radius: .3rem;
+  color: $white;
+  box-shadow: 0 0 0.5em 0 $yellow;
+}
+
+.pad-bank {
+  padding: .3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.drum-pad {
+  font-size: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $orange;
+  border: $orange 0.125em solid;
+
+  padding: 0.25em 1em;
+  margin: .3em;
+  border-radius: .5em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
+  box-shadow: inset 0 0 0.5em 0 $orange,
+  0 0 0.5em 0 $orange;
+  position: relative;
+  transition: background-color 100ms linear;
+
+  &:hover,
+  &:focus {
+    color: $yellow;
+    background: $orange;
+    text-shadow: none;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
+  }
+
+  &::after {
+    content: '';
+    background-color: $orange;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: $orange;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}

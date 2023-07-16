@@ -1,12 +1,10 @@
-@use 'SCSS/abstracts/' as a;
-@use 'SCSS/base/' as b;
-@use 'SCSS/components/' as c;
-@use 'SCSS/layout/' as l;
+@use '../abstracts/colors' as c;
+@use '../abstracts/fonts' as f;
 
 body {
-  font-family: a.$font-stack;
-  background-color: a.$black;
-  color: a.$yellow;
+  font-family: f.$font-stack;
+  background-color: c.$black;
+  color: $yellow;
   margin: 0;
   display: flex;
   min-width: 320px;
@@ -14,7 +12,7 @@ body {
 }
 
 .title {
-  color: a.$yellow;
+  color: c.$yellow;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
 
   position: relative;
@@ -22,7 +20,7 @@ body {
   &:before {
     content: '';
     position: absolute;
-    background-color: a.$yellow;
+    background-color: c.$yellow;
     top: 50%;
     left: 0;
     width: 100%;

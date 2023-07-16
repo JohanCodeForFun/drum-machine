@@ -1,0 +1,14 @@
+// layout
+$breakpoints: (
+  'small': 375px,
+  'medium': 992px,
+  'large': 1200px
+);
+
+@media screen and (max-width: 375px) {
+  #drum-machine {
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
