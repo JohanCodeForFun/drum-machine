@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { DrumMachine } from "./components/DrumMachine";
 
 function App() {
