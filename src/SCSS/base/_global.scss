@@ -2,9 +2,8 @@
 @use '../abstracts/fonts' as f;
 
 body {
-  font-family: f.$font-stack;
   background-color: c.$black;
-  color: $yellow;
+  color: c.$yellow;
   margin: 0;
   display: flex;
   min-width: 320px;

@@ -2,33 +2,3 @@
 @use 'SCSS/base/' as b;
 @use 'SCSS/components/' as c;
 @use 'SCSS/layout/' as l;
-
-body {
-  font-family: a.$font-stack;
-  background-color: a.$black;
-  color: a.$yellow;
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-.title {
-  color: a.$yellow;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em;
-
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    background-color: a.$yellow;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  
-    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
-    filter: blur(1em);
-  }
-}
